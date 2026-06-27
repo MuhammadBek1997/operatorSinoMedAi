@@ -6,7 +6,7 @@ import ConfirmModal from '../components/ConfirmModal'
 import toast from 'react-hot-toast'
 import { Plus, ShieldCheck, Mail, Phone, Trash2, Eye, EyeOff } from 'lucide-react'
 
-const emptyForm = { full_name: '', email: '', phone: '', password: '' }
+const emptyForm = { full_name: '', username: '', email: '', phone: '', password: '' }
 
 export default function Assistants() {
   const [assistants, setAssistants] = useState([])
@@ -179,13 +179,23 @@ export default function Assistants() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-sage-700 mb-1.5">Email *</label>
+            <label className="block text-sm font-medium text-sage-700 mb-1.5">Username *</label>
+            <input
+              type="text"
+              value={form.username}
+              onChange={(e) => update('username', e.target.value)}
+              placeholder="yordamchi_username"
+              required
+              className="w-full px-4 py-3 border border-sage-200 rounded-xl text-sm bg-sage-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-sage-500"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-sage-700 mb-1.5">Email</label>
             <input
               type="email"
               value={form.email}
               onChange={(e) => update('email', e.target.value)}
               placeholder="email@example.com"
-              required
               className="w-full px-4 py-3 border border-sage-200 rounded-xl text-sm bg-sage-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-sage-500"
             />
           </div>

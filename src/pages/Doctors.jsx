@@ -10,7 +10,7 @@ import {
 } from 'lucide-react'
 
 const emptyForm = {
-  full_name: '', specialization: '', email: '', phone: '', password: ''
+  full_name: '', username: '', specialization: '', email: '', phone: '', password: ''
 }
 
 export default function Doctors() {
@@ -208,6 +208,17 @@ export default function Doctors() {
             />
           </div>
           <div>
+            <label className="block text-sm font-medium text-sage-700 mb-1.5">Username *</label>
+            <input
+              type="text"
+              value={form.username}
+              onChange={(e) => update('username', e.target.value)}
+              placeholder="doktor_username"
+              required
+              className="w-full px-4 py-3 border border-sage-200 rounded-xl text-sm bg-sage-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-sage-500"
+            />
+          </div>
+          <div>
             <label className="block text-sm font-medium text-sage-700 mb-1.5">Mutaxassislik *</label>
             <input
               type="text"
@@ -219,24 +230,22 @@ export default function Doctors() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-sage-700 mb-1.5">Email *</label>
+            <label className="block text-sm font-medium text-sage-700 mb-1.5">Email</label>
             <input
               type="email"
               value={form.email}
               onChange={(e) => update('email', e.target.value)}
               placeholder="email@example.com"
-              required
               className="w-full px-4 py-3 border border-sage-200 rounded-xl text-sm bg-sage-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-sage-500"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-sage-700 mb-1.5">Telefon *</label>
+            <label className="block text-sm font-medium text-sage-700 mb-1.5">Telefon</label>
             <input
               type="tel"
               value={form.phone}
               onChange={(e) => update('phone', e.target.value)}
               placeholder="+998901234567"
-              required
               className="w-full px-4 py-3 border border-sage-200 rounded-xl text-sm bg-sage-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-sage-500"
             />
           </div>
